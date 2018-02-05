@@ -1,7 +1,5 @@
-// import * as admin from 'firebase-admin';
-
-let admin = require('firebase-admin');
-const config = require('./config/config')
+import admin from 'firebase-admin';
+import config from './config/config';
 
 admin.initializeApp({
   credential: admin.credential.cert(config),
@@ -11,5 +9,11 @@ admin.initializeApp({
 let db = admin.database();
 let ref = db.ref("/Stories");
 
+ref.on("value", function (snapshot) {
+  console.log(snapshot.val());
+}, function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
 
-module.exports = { ref };
+
+export default ref;

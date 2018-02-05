@@ -1,6 +1,5 @@
-const { ref } = require('../firebase')
-const articles = require('./articleSeed.js')
-const config = require('../config/config')
+import { ref } from '../firebase';
+import articles from './articleSeed.js';
+import config from '../config/config';
 
-
-articles.map(article => ref.push(article))
+articles.map(article => ref.push(article));

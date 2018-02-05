@@ -1,4 +1,4 @@
-module.exports = [{
+const articleSeed  = [{
   title: `What does Jose Mourinho's handwriting say about his personality?`,
   body: `Jose Mourinho was at The O2 on Sunday night to watch Dominic Thiem in action against Novak Djokovic. Thiem took the first set before Djokovic fought back to claim the victory, but Manchester United's manager was clearly impressed with the Austrian's performance.`,
   author: `tickle122`,
@@ -295,3 +295,5 @@ module.exports = [{
   imageUrl: `https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/04/1493235373large_react_apps_A-01.png`
 },
 ]
+
+export default articleSeed;
