@@ -1,5 +1,9 @@
-import { ref } from '../firebase';
+import db from '../firebase';
 import articles from './articleSeed.js';
 import config from '../config/config';
 
-articles.map(article => ref.push(article));
+const seedDB = () => {
+articles.map(article =>  db.ref("/Stories").push(article));
+}
+
+export default seedDB;

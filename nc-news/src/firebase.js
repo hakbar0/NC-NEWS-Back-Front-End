@@ -1,19 +1,8 @@
-import admin from 'firebase-admin';
+import * as firebase from "firebase";
 import config from './config/config';
 
-admin.initializeApp({
-  credential: admin.credential.cert(config),
-  databaseURL: "https://nc-news-90b25.firebaseio.com"
-});
+firebase.initializeApp(config)
 
-let db = admin.database();
-let ref = db.ref("/Stories");
+const db = firebase.database();
 
-ref.on("value", function (snapshot) {
-  console.log(snapshot.val());
-}, function (errorObject) {
-  console.log("The read failed: " + errorObject.code);
-});
-
-
-export default ref;
+export default db;
