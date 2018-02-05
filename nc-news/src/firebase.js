@@ -10,10 +10,6 @@ admin.initializeApp({
 
 let db = admin.database();
 let ref = db.ref("/Stories");
-ref.push('hello')
 
-ref.on("value", function(snapshot) {
-  console.log(snapshot.val());
-}, function (errorObject) {
-  console.log("The read failed: " + errorObject.code);
-});
+
+module.exports = { ref };
