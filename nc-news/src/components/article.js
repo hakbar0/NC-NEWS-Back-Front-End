@@ -11,6 +11,7 @@ class Article extends React.Component {
     article: '',
     comments: ''
   }
+
   render() {
     return (
       <div class='container'>
@@ -46,19 +47,17 @@ class Article extends React.Component {
                   </div>
                 </form>
               </div>
-
-              {this.state.comments && Object.entries(this.state.comments).reverse().map(function (comment) {
-                return (
-                  <div class="card comments-card">
-                    <div className='whole-card'>
-                      <div className='card-body comments-body'><h3 className='article-title'>Author: {comment[1].fullname}</h3>
-                        <h4>Comment: {comment[1].message}</h4>
-                        <h4>Created Date: {comment[1].createdDate}</h4>
-                      </div>
+              {this.state.comments && Object.entries(this.state.comments).reverse().map((comment) => (
+                <div class="card comments-card">
+                  <div className='whole-card'>
+                    <div className='card-body comments-body' delete={comment[1].message}><h3 className='article-title'>Author: {comment[1].fullname}</h3>
+                      <h4>Comment: {comment[1].message}</h4>
+                      <h4>Created Date: {comment[1].createdDate}</h4>
+                      <button type="button" class="btn btn-danger downvote" onClick={this.deleteComment.bind(null, comment[0])}>Delete</button>
                     </div>
                   </div>
-                )
-              })}
+                </div>
+              ))}
 
             </div>
             :
@@ -107,6 +106,10 @@ class Article extends React.Component {
       id: this.props.match.params.id,
       message: document.getElementById('form-message').value
     });
+  }
+
+  deleteComment = (id) => {
+    db.ref(`/Comments/${id}`).remove();
   }
 }
 export default Article;
