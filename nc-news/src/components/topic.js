@@ -1,27 +1,25 @@
 import React from 'react';
+import '../App.css';
 import db from '../firebase';
 import { Link } from 'react-router-dom';
-import seedDB from '../seed/seed'
-import '../App.css';
-class Articles extends React.Component {
-
+class Topic extends React.Component {
   componentDidMount() {
-    this.getAllArticles();
+    this.getArticlesByTopics();
   }
   state = {
-    articles: ''
+    articlesByTopic: ''
   }
   render() {
     return (
       <div>
-        {this.state.articles ?
+        {this.state.articlesByTopic ?
           <div className='container article-board'>
-            {Object.entries(this.state.articles).map(function (article) {
+            {Object.entries(this.state.articlesByTopic).map(function (article) {
               return (
                 <div className='whole-card'>
                   <div className='card' style={{ width: '20rem' }}>
                     <img src={`${article[1].imageUrl}`} alt="Some image" />
-                    <Link to={`article/${article[0]}`}><div className='card-body body-of-the-card'><h3 className='article-title'>{article[1].title}</h3></div></Link>
+                    <Link to={`/article/${article[0]}`}><div className='card-body body-of-the-card'><h3 className='article-title'>{article[1].title}</h3></div></Link>
                   </div>
                 </div>
               )
@@ -31,22 +29,13 @@ class Articles extends React.Component {
       </div>
     )
   }
-  getAllArticles = () => {
-    db.ref("/Stories").on("value", res => {
+  getArticlesByTopics = () => {
+    db.ref("/Stories").orderByChild('category').equalTo(`${this.props.match.params.topic}`).on('value', res => {
       this.setState({
-        articles: res.val()
+        articlesByTopic: res.val()
       })
-    });
-  };
+    })
+  }
 }
 
-
-
-export default Articles;
-
-
-
-
-
-
-
+export default Topic;
