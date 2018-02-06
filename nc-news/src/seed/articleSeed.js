@@ -79,14 +79,6 @@ const articleSeed  = [{
   imageUrl: `https://usatftw.files.wordpress.com/2017/02/ap_britain_soccer_premier_league_88532462.jpg?w=1000&h=600&crop=1`
 },
 {
-  title: `Defensive Metrics: Measuring the Intensity of a High Press.`,
-  body: `In this article, with the use of detailed Opta data, I am going to create a metric that I believe can quantify the extent and aggression of high presses employed by teams, both over a season and in any specific match. I’m going to see if it is possible define the intensity of a press with the use of numbers, more specifically by using some of the events that Opta record. Why would anyone want to do this? Well, for pretty much the same reason that we undertake any analytics study. If we can develop an objective scale which measures the intensity of a press then coaches can quickly see at a glance the strength, or otherwise, of the high pressing that their opposition has utilised in recent games. Teams or fans can also assess how much pressure their team exerted on the opposition in deep positions, and who knows, perhaps in time we will be able to assess the effectiveness that individual players have on the ability of their team to press. In essence we can take what is otherwise a subjective description and reduce it to one number so that it allows for comparison, analysis and ranking, if so desired.`,
-  author: `weegembump`,
-  category: `Football`,
-  votes: Math.floor(Math.random() * 50),
-  imageUrl: `https://usatftw.files.wordpress.com/2017/02/ap_britain_soccer_premier_league_88532462.jpg?w=1000&h=600&crop=1`
-},
-{
   title: `Sunday league football.`,
   body: `Sunday league football is a term used in the United Kingdom to describe those association football leagues which play on Sunday, as opposed to the more usual Saturday. These leagues tend to be lower standard amateur competitions, whose players may have less ability or less time to devote to football. The term pub league can also be used, due to the number of public houses that enter teams. Sunday leagues are sanctioned by the local County Football Association. There is no organised promotion or relegation between leagues, unlike in the National League System, which covers the top few levels of amateur football, although many leagues operate several divisions with promotion and relegation between them. However, ambitious Sunday teams may apply to join a Saturday league for a higher standard of football, and from there graduate to the FA-sanctioned leagues.`,
   author: `jessjelly`,

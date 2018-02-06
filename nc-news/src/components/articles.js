@@ -21,14 +21,16 @@ class Articles extends React.Component {
               return (
                 <div className='whole-card'>
                   <div className='card' style={{ width: '20rem' }}>
-                    <img src={`${article[1].imageUrl}`} alt="Some image" />
+                    <img src={`${article[1].imageUrl}`} className = 'article-image' alt="Some image" />
                     <Link to={`article/${article[0]}`}><div className='card-body body-of-the-card'><h3 className='article-title'>{article[1].title}</h3></div></Link>
                   </div>
                 </div>
               )
             })}</div>
           :
-          <h3 className='loading'>loading....</h3>}
+          <img src = 'https://media.giphy.com/media/52qtwCtj9OLTi/giphy.gif' alt = 'Loading' className='loading'/>
+          // <h3 className='loading'>loading....</h3>
+        }
       </div>
     )
   }
