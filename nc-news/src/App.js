@@ -18,7 +18,6 @@ class App extends Component {
   }
   NoMatch = () => (
     <div className='container four-zero-four'>
-      <img src='https://media.giphy.com/media/NTXqH1bUCfHBS/giphy.gif' />
     </div>);
 }
 

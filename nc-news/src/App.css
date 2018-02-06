@@ -1,28 +1,102 @@
-.App {
+.jumbotron{
+  margin-top: 2%;
+  background-color: lightblue;
+}
+
+.navbar {
+  background-color: lightblue;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.article-board{
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.whole-card{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.body-of-the-card{
+  height: 250px;
+}
+
+.article-title{
+  text-align: center;
+  padding: 0.5em;
+}
+
+.article-body{
+  padding-bottom: 0.5em;
+}
+
+.article-author{
+  padding-bottom: 0.5em;
+}
+
+.article-belongs{
+  padding-bottom: 0.5em;
+}
+
+.article-votes{
+  padding-bottom: 0.5em;
+}
+
+
+.article-text{
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.topics {
+  font-size:  50px;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+
+.topics-title {
+  text-align: center;
+  font-size:  50px;
+}
+
+.Football{
+  font-size: 50px;
   color: white;
+  text-shadow: 1px 1px black;
 }
 
-.App-title {
-  font-size: 1.5em;
+.Cooking{
+  font-size:  50px;
+  color: white;
+  text-shadow: 1px 1px black;
 }
 
-.App-intro {
-  font-size: large;
+.Coding{
+  font-size:  50px;
+  color: white; 
+  text-shadow: 1px 1px black;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.four-zero-four{
+  background-image: url('https://media.giphy.com/media/GGP4dpOtItmuI/giphy.gif');
+  background-size: cover;
+  height: 800px;
+  width: 5000px;
+}
+
+.loading{
+  padding-top: 2em;
+  font-size: 500%;
+  text-align: center;
+}
+
+.topics{
+  background-color: lightblue;
+  text-shadow: 1px 1px black;
 }
