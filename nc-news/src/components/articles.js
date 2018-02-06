@@ -7,6 +7,7 @@ class Articles extends React.Component {
 
   componentDidMount() {
     this.getAllArticles();
+    seedDB();
   }
   state = {
     articles: ''

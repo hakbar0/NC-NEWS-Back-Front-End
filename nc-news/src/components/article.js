@@ -22,21 +22,31 @@ class Article extends React.Component {
                 <h3 className='article-author'>Author: {this.state.article.author}</h3>
                 <h3 className='article-belongs'>Category: {this.state.article.category}</h3>
                 <h3 className='article-votes'>Votes: {this.state.article.votes}</h3>
+                <button type="button" class="btn btn-success" onClick={this.upVote}>Upvote</button>
+                <button type="button" class="btn btn-danger" onClick={this.downVote}>Downvote</button>
               </div>
             </div>
             :
-            <h3 className ='loading'>loading....</h3>}
+            <h3 className='loading'>loading....</h3>}
         </header>
       </div>
-
     )
   }
+
   getArticle = () => {
     db.ref(`/Stories/${this.props.match.params.id}`).on("value", res => {
       this.setState({
         article: res.val()
       })
     });
+  }
+  upVote = () => {
+    let currentvote = this.state.article.votes;
+    db.ref(`/Stories/${this.props.match.params.id}`).update({ votes: currentvote + 1 });
+  }
+  downVote = () => {
+    let currentvote = this.state.article.votes;
+    db.ref(`/Stories/${this.props.match.params.id}`).update({ votes: currentvote - 1 });
   }
 }
 export default Article;
