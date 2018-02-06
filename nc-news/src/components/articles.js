@@ -29,7 +29,6 @@ class Articles extends React.Component {
             })}</div>
           :
           <img src = 'https://media.giphy.com/media/52qtwCtj9OLTi/giphy.gif' alt = 'Loading' className='loading'/>
-          // <h3 className='loading'>loading....</h3>
         }
       </div>
     )

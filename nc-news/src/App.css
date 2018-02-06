@@ -1,3 +1,5 @@
+/* Home Page */
+
 .jumbotron{
   margin-top: 2%;
   background-color: lightblue;
@@ -42,30 +44,48 @@ a{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* font-size: 500%;
-  text-align: center; */
 }
 
-/* .article-body{
+/* Home Page */
+
+
+/* Single Article Page */
+
+.article-text{
+  padding-top: 0.5em;
   padding-bottom: 0.5em;
-} */
-
-/* .article-author{
-  padding-bottom: 0.5em;
-} */
-
-/* .article-belongs{
-  padding-bottom: 0.5em;
-} */
-
-/* .article-votes{
-  padding-bottom: 0.5em;
-} */
-
-
-/* .article-text{
   text-align: center;
-} */
+}
+
+.article-author{
+  padding-top: 0.5em;
+}
+
+.article-category{
+  padding-top: 0.5em;
+}
+
+.article-votes{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.extra-details{
+  margin-top:10px;
+  text-align: center;
+}
+
+.comments-card{
+  margin-top:10px;
+}
+
+.comments-body{
+  height: 350px;
+  text-align: center;
+}
+
+/* Single Article Page */
+
 
 /* .topics {
   font-size:  50px;
