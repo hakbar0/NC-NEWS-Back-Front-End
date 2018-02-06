@@ -5,7 +5,7 @@ import db from '../firebase';
 class Article extends React.Component {
   componentDidMount() {
     this.getArticle();
-    this.getComments()
+    this.getComments();
   }
   state = {
     article: '',
@@ -33,11 +33,25 @@ class Article extends React.Component {
                 <button type="button" class="btn btn-danger downvote" onClick={this.downVote}>Downvote</button>
               </div>
 
-              {this.state.comments && Object.entries(this.state.comments).map(function (comment) {
+              <div class="card comments-form">
+
+                <form>
+                  <div className='form-group'>
+                    <h2 className='comment-title'>Post a comment</h2>
+                    <label for="form-name"><h5 className='form-name'>Author</h5></label>
+                    <input type="text" className="form-control" id="form-name" placeholder="Example: Lee Morris......" />
+                    <label for="form-message"><h5 className='form-message'>Message</h5></label>
+                    <input type="text" className="form-control form-message" id="form-message" placeholder="Example: Why did Lee's fish die? The water LEEked...." />
+                    <input class="btn btn-primary submit" type="button" value="Submit" onClick={this.postComment} />
+                  </div>
+                </form>
+              </div>
+
+              {this.state.comments && Object.entries(this.state.comments).reverse().map(function (comment) {
                 return (
                   <div class="card comments-card">
                     <div className='whole-card'>
-                      <div className='card-body comments-body'><h3 className='article-title'>Name: {comment[1].fullname}</h3>
+                      <div className='card-body comments-body'><h3 className='article-title'>Author: {comment[1].fullname}</h3>
                         <h4>Comment: {comment[1].message}</h4>
                         <h4>Created Date: {comment[1].createdDate}</h4>
                       </div>
@@ -74,6 +88,24 @@ class Article extends React.Component {
       this.setState({
         comments: res.val()
       })
+    });
+  }
+  postComment = () => {
+    let username = ''
+    db.ref('/Users').orderByChild('fullname').equalTo(document.getElementById('form-name').value).once('value', res => {
+      if (!res.val()) {
+        db.ref("/Users").push({
+          createdDate: new Date(Date.now()).toISOString(),
+          fullname: document.getElementById('form-name').value,
+        })
+      }
+    })
+
+    db.ref("/Comments").push({
+      createdDate: new Date(Date.now()).toISOString(),
+      fullname: document.getElementById('form-name').value,
+      id: this.props.match.params.id,
+      message: document.getElementById('form-message').value
     });
   }
 }

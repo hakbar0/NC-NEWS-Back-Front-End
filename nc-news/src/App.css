@@ -80,8 +80,29 @@ a{
 }
 
 .comments-body{
-  height: 350px;
+  height: 400px;
   text-align: center;
+}
+
+.comments-form{
+  margin-top:10px;
+}
+
+.form-group{
+  text-align: center;
+}
+
+.comment-title{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.form-message{
+  padding-top: 0.5em;
+}
+
+.submit{
+  margin: 10px 0;
 }
 
 /* Single Article Page */
