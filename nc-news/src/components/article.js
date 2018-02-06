@@ -5,6 +5,7 @@ import db from '../firebase';
 class Article extends React.Component {
   componentDidMount() {
     this.getArticle();
+    this.getComments()
   }
   state = {
     article: '',
@@ -25,6 +26,18 @@ class Article extends React.Component {
                 <h3 className='article-votes'>Votes: {this.state.article.votes}</h3>
                 <button type="button" class="btn btn-success" onClick={this.upVote}>Upvote</button>
                 <button type="button" class="btn btn-danger" onClick={this.downVote}>Downvote</button>
+
+                {this.state.comments && Object.entries(this.state.comments).map(function (comment) {
+                  return (
+                    <div className='whole-card'>
+                      {console.log(comment)}
+                      <div className='card-body body-of-the-card'><h3 className='article-title'>Name: {comment[1].fullname}</h3>
+                        <h4>Comment: {comment[1].message}</h4>
+                        <h4>Created Date: {comment[1].createdDate}</h4>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
             </div>
             :
@@ -50,7 +63,7 @@ class Article extends React.Component {
     db.ref(`/Stories/${this.props.match.params.id}`).update({ votes: currentvote - 1 });
   }
   getComments = () => {
-    db.ref(`/Stories/${this.props.match.params.id}`).on("value", res => {
+    db.ref("/Comments").orderByChild('id').equalTo(`${this.props.match.params.id}`).on('value', res => {
       this.setState({
         comments: res.val()
       })
