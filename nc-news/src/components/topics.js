@@ -22,7 +22,7 @@ class Topics extends React.Component {
               )
             })}</div>
           :
-          <h3 className='loading'>loading....</h3>}
+          <img src = 'https://media.giphy.com/media/52qtwCtj9OLTi/giphy.gif' alt = 'Loading' className='loading'/>}
       </div>
     )
   }
