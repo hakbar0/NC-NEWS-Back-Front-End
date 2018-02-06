@@ -2,6 +2,7 @@ import React from 'react';
 import db from '../firebase';
 import { Link } from 'react-router-dom';
 import seedDB from '../seed/seed'
+import RandomCommentGenerator from '../seed/CommentsSeed'
 import '../App.css';
 class Articles extends React.Component {
 

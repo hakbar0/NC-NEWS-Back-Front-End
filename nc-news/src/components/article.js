@@ -7,7 +7,8 @@ class Article extends React.Component {
     this.getArticle();
   }
   state = {
-    article: ''
+    article: '',
+    comments: ''
   }
   render() {
     return (
@@ -47,6 +48,13 @@ class Article extends React.Component {
   downVote = () => {
     let currentvote = this.state.article.votes;
     db.ref(`/Stories/${this.props.match.params.id}`).update({ votes: currentvote - 1 });
+  }
+  getComments = () => {
+    db.ref(`/Stories/${this.props.match.params.id}`).on("value", res => {
+      this.setState({
+        comments: res.val()
+      })
+    });
   }
 }
 export default Article;
