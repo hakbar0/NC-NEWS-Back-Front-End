@@ -5,6 +5,7 @@ import Articles from './components/articles'
 import Article from './components/article'
 import Topics from './components/topics'
 import Topic from './components/topic'
+import CreateStory from './components/createstory'
 import './App.css';
 
 
@@ -19,6 +20,7 @@ class App extends Component {
             <Route exact path="/article/:id" render={(params) => <Article {...params} />} />
             <Route exact path="/topics" component={Topics} />
             <Route exact path="/topics/:topic" render={(params) => <Topic {...params} />} />
+            <Route exact path="/create-story" render={(params) => <CreateStory {...params} />} />
             <Route component={this.NoMatch} />
           </Switch>
         </div>

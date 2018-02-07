@@ -17,7 +17,7 @@ class Articles extends React.Component {
       <div>
         {this.state.articles ?
           <div className='container article-board'>
-            {Object.entries(this.state.articles).map(function (article) {
+            {Object.entries(this.state.articles).reverse().map(function (article) {
               return (
                 <div className='whole-card'>
                   <div className='card' style={{ width: '20rem' }}>

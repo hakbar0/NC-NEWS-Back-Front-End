@@ -8,6 +8,7 @@ const Navbar = () => {
       <nav className="navbar navbar-inverse bg-inverse">
         <NavLink exact to='/'>Home</NavLink>
         <NavLink to='/topics'>Topics</NavLink>
+        <NavLink to='/create-story'>Create a story</NavLink>
         <NavLink to='/comments'>Comments</NavLink>
         <NavLink to='/users'>Users</NavLink>
       </nav>
