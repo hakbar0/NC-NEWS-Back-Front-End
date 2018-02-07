@@ -109,7 +109,10 @@ class Article extends React.Component {
   }
 
   deleteComment = (id) => {
-    db.ref(`/Comments/${id}`).remove();
+    db.ref(`/Comments/${id}`).once('value', res => {
+      if(res.val().fullname === 'northcoder') db.ref(`/Comments/${id}`).remove();
+      else if (res.val().fullname !== 'northcoder') alert('You cannot delete this comment!!');
+    })
   }
 }
 export default Article;
