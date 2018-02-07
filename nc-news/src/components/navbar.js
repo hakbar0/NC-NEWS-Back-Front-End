@@ -9,7 +9,6 @@ const Navbar = () => {
         <NavLink exact to='/'>Home</NavLink>
         <NavLink to='/topics'>Topics</NavLink>
         <NavLink to='/create-story'>Create a story</NavLink>
-        <NavLink to='/comments'>Comments</NavLink>
         <NavLink to='/users'>Users</NavLink>
       </nav>
       <div class="container">

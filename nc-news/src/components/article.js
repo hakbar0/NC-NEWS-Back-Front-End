@@ -90,16 +90,6 @@ class Article extends React.Component {
     });
   }
   postComment = () => {
-    let username = ''
-    db.ref('/Users').orderByChild('fullname').equalTo(document.getElementById('form-name').value).once('value', res => {
-      if (!res.val()) {
-        db.ref("/Users").push({
-          createdDate: new Date(Date.now()).toISOString(),
-          fullname: document.getElementById('form-name').value,
-        })
-      }
-    })
-
     db.ref("/Comments").push({
       createdDate: new Date(Date.now()).toISOString(),
       fullname: document.getElementById('form-name').value,

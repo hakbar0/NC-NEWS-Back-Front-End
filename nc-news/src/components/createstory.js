@@ -35,21 +35,27 @@ class CreateStory extends React.Component {
     )
   }
   postStory = () => {
-    db.ref('/Stories').push({
-      author: document.getElementById('form-name').value,
-      body: document.getElementById('form-message').value,
-      category: document.getElementById('form-category').value,
-      imageUrl: document.getElementById('form-image').value,
-      title: document.getElementById('form-title').value,
-      votes: 0
+    let username = ''
+    db.ref('/Users').orderByChild('fullname').equalTo(document.getElementById('form-name').value).once('value', res => {
+      if (!res.val()) {
+        db.ref("/Users").push({
+          createdDate: new Date(Date.now()).toISOString(),
+          fullname: document.getElementById('form-name').value,
+        })
+      }
+      db.ref('/Stories').push({
+        author: document.getElementById('form-name').value,
+        body: document.getElementById('form-message').value,
+        category: document.getElementById('form-category').value,
+        imageUrl: document.getElementById('form-image').value,
+        title: document.getElementById('form-title').value,
+        votes: 0
+      })
+      this.setState({
+        redirect: true
+      })
     })
-
-    this.setState({
-      redirect: true
-    })
-
   }
-
 }
 
 export default CreateStory;
