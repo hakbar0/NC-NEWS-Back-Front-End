@@ -17,18 +17,6 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0"
   },
-  "engines":{
-  "node" : "8.9.0" 
-  },
-  "repositry": {
-    "type": "git",
-    "url": "https://github.com/hakbar0/NC-NEWS-Back-Front-End"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
