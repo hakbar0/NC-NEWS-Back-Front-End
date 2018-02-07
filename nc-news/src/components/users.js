@@ -19,9 +19,7 @@ class Users extends React.Component {
             {Object.entries(this.state.users).reverse().map(function (user) {
               return (
                 <div className='whole-card'>
-                  <div className='card' style={{ width: '20rem' }}>
-                    <Link to={`/users/${user[1].fullname}`}><div className='card-body body-of-the-card'><h3>{user[1].fullname}</h3></div></Link>
-                  </div>
+                  <Link to={`/users/${user[1].fullname}`}><div className='card-body body-of-the-card'><h3>{user[1].fullname}</h3></div></Link>
                 </div>
               )
             })}</div>
