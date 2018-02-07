@@ -19,7 +19,7 @@ class CreateStory extends React.Component {
             <input type="text" className="form-control" id="form-name" placeholder="Example: Lee Morris......" />
             <label for="form-message"><h5 className='form-message'>Message</h5></label>
             <input type="text" className="form-control form-message" id="form-message" placeholder="Example: Why did Lee's fish die? The water LEEked...." />
-            <label for="form-category">Choose category:</label>
+            <label for="form-category"><h5 className = 'form-category'>Choose category:</h5></label>
             <select class="form-control" id="form-category">
               <option>Football</option>
               <option>Cooking</option>

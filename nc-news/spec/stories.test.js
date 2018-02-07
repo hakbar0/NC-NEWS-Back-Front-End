@@ -1,6 +1,6 @@
-db = require('./firebase/firebaseTest');
-
 // tests for all story features.
+
+db = require('./firebase/firebaseTest');
 
 it('updates vote count in comment for an upvote.', () => {
   return db.ref(`/Stories/-L4erJ5eJo56Bvs5BsjK`).once("value", res => {

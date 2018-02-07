@@ -100,6 +100,17 @@ a{
   padding-top: 0.5em;
 }
 
+.form-name{
+  padding-top: 0.5em;
+}
+
+.form-category{
+  padding-top: 0.5em;
+}
+.form-image{
+  padding-top: 0.5em;
+}
+
 .submit{
   margin: 10px 0;
 }

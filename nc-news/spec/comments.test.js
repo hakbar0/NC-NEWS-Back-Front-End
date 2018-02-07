@@ -31,7 +31,7 @@ it('Able to delete a comment.', () => {
   }).then(something => {
     return db.ref("/Comments").once('value', commentsCount => {
       let newTotalComments = Object.entries(commentsCount.val()).length
-      expect(previousTotalComments -1).toBe(newTotalComments)
+      expect(previousTotalComments - 1).toBe(newTotalComments)
     })
   })
 })
