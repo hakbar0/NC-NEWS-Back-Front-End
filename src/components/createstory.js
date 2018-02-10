@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import db from '../firebase';
-import { BrowserRouter, Route, NavLink, Switch, Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class CreateStory extends React.Component {
   state = {
@@ -14,12 +14,12 @@ class CreateStory extends React.Component {
           <div className='form-group'>
             <h2 className='story-title'>Post a story</h2>
             <label for="form-title"><h5 className="form-title">Title</h5></label>
-            <input type="text" className="form-control" id="form-title" placeholder="Example: Women found alive, but is the man dead????" required />
+            <input type="text" className="form-control" id="form-title" placeholder="Example: Women found alive, but is the man dead????" />
             <label for="form-name"><h5 className='form-name'>Author</h5></label>
-            <input type="text" className="form-control" id="form-name" placeholder="Example: Lee Morris......" />
+            <input type="text" className="form-control" id="form-name" placeholder="Example: Lee Morris......" required />
             <label for="form-message"><h5 className='form-message'>Message</h5></label>
             <input type="text" className="form-control form-message" id="form-message" placeholder="Example: Why did Lee's fish die? The water LEEked...." />
-            <label for="form-category"><h5 className = 'form-category'>Choose category:</h5></label>
+            <label for="form-category"><h5 className='form-category'>Choose category:</h5></label>
             <select class="form-control" id="form-category">
               <option>Football</option>
               <option>Cooking</option>
@@ -35,7 +35,6 @@ class CreateStory extends React.Component {
     )
   }
   postStory = () => {
-    let username = ''
     db.ref('/Users').orderByChild('fullname').equalTo(document.getElementById('form-name').value).once('value', res => {
       if (!res.val()) {
         db.ref("/Users").push({

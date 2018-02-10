@@ -13,7 +13,7 @@ const Navbar = () => {
       </nav>
       <div class="container">
         <div class="jumbotron">
-          <img src='https://northcoders.com/images/logos/learn_to_code_manchester_original_second.png' width='100%' />
+          <img src='https://northcoders.com/images/logos/learn_to_code_manchester_original_second.png' alt = 'logo' width='100%' />
         </div>
       </div>
     </div>

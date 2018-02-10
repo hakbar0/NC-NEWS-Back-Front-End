@@ -20,7 +20,7 @@ class Article extends React.Component {
             <div>
 
               <div class="card">
-                <img class="card-img-top news" src={`${this.state.article.imageUrl}`} alt="Card image cap" />
+                <img class="card-img-top news" src={`${this.state.article.imageUrl}`} alt="Card cap." />
                 <div class="card-block article-text">
                   <h1 className='article-title'>{this.state.article.title}</h1>
                   <h3 className='article-body'>{this.state.article.body}</h3>
@@ -50,8 +50,8 @@ class Article extends React.Component {
               {this.state.comments && Object.entries(this.state.comments).reverse().map((comment) => (
                 <div class="card comments-card">
                   <h3 className='article-title'>Author: {comment[1].fullname}</h3>
-                  <h4 className = 'comment-message'>Comment: {comment[1].message}</h4>
-                  <h4 className = 'comment-date'>Created Date: {comment[1].createdDate}</h4>
+                  <h4 className='comment-message'>Comment: {comment[1].message}</h4>
+                  <h4 className='comment-date'>Created Date: {comment[1].createdDate}</h4>
                   <button type="button" class="btn btn-danger downvote" onClick={this.deleteComment.bind(null, comment[0])}>Delete</button>
                 </div>
               ))}
@@ -64,6 +64,8 @@ class Article extends React.Component {
     )
   }
 
+
+
   getArticle = () => {
     db.ref(`/Stories/${this.props.match.params.id}`).on("value", res => {
       this.setState({
@@ -71,14 +73,17 @@ class Article extends React.Component {
       })
     });
   }
+
   upVote = () => {
     let currentvote = this.state.article.votes;
     db.ref(`/Stories/${this.props.match.params.id}`).update({ votes: currentvote + 1 });
   }
+
   downVote = () => {
     let currentvote = this.state.article.votes;
     db.ref(`/Stories/${this.props.match.params.id}`).update({ votes: currentvote - 1 });
   }
+
   getComments = () => {
     db.ref("/Comments").orderByChild('id').equalTo(`${this.props.match.params.id}`).on('value', res => {
       this.setState({
@@ -86,6 +91,7 @@ class Article extends React.Component {
       })
     });
   }
+
   postComment = () => {
     db.ref("/Comments").push({
       createdDate: new Date(Date.now()).toISOString(),
@@ -102,4 +108,5 @@ class Article extends React.Component {
     })
   }
 }
+
 export default Article;

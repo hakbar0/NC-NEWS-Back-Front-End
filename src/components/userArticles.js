@@ -20,7 +20,7 @@ class UserArticles extends React.Component {
               return (
                 <div className='whole-card'>
                   <div className='card' style={{ width: '20rem' }}>
-                    <img src={`${article[1].imageUrl}`} className = 'article-image' alt="Some image" />
+                    <img src={`${article[1].imageUrl}`} className = 'article-image' alt="Article" />
                     <Link to={`/article/${article[0]}`}><div className='card-body body-of-the-card'><h3 className='article-title'>{article[1].title}</h3></div></Link>
                   </div>
                 </div>
@@ -34,7 +34,6 @@ class UserArticles extends React.Component {
   }
   
   getUserArticles = () => {
-    console.log('hello')
     db.ref("/Stories").orderByChild('author').equalTo(`${this.props.match.params.name}`).on('value', res => {
       this.setState({
         article: res.val()

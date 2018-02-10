@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, NavLink, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar'
 import Articles from './components/articles'
 import Article from './components/article'
@@ -32,8 +32,8 @@ class App extends Component {
     );
   }
   NoMatch = () => (
-    <div class="container">
-      <h3 className='four-zero-four jumbotron'>404 page not found ⛔️</h3>
+    <div className="container">
+      <h3 className='four-zero-four jumbotron'>404 page not found</h3>
     </div>
   )
 }
