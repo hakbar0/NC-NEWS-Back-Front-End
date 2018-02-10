@@ -32,8 +32,7 @@ class App extends Component {
     );
   }
   NoMatch = () => (
-    <div className='container four-zero-four'>
-    </div>);
+      <div className='four-zero-four'><img src='https://media.giphy.com/media/GGP4dpOtItmuI/giphy.gif' alt='Please leave...' /></div>)
 }
 
 export default App;

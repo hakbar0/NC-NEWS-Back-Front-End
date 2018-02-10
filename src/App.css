@@ -140,44 +140,11 @@ a{
 
 /* Single Article Page */
 
+/* 404 Page not found*/
 
-/* .topics {
-  font-size:  50px;
+.four-zero-four{
+  display: block;
   text-align: center;
-} */
+} 
 
-
-/* .topics-title {
-  text-align: center;
-  font-size:  50px;
-} */
-
-/* .Football{
-  font-size: 50px;
-  color: white;
-  text-shadow: 1px 1px black;
-} */
-
-/* .Cooking{
-  font-size:  50px;
-  color: white;
-  text-shadow: 1px 1px black;
-} */
-
-/* .Coding{
-  font-size:  50px;
-  color: white; 
-  text-shadow: 1px 1px black;
-} */
-
-/* .four-zero-four{
-  background-image: url('https://media.giphy.com/media/GGP4dpOtItmuI/giphy.gif');
-  background-size: cover;
-  height: 800px;
-  width: 5000px;
-} */
-
-/* .topics{
-  background-color: lightblue;
-  text-shadow: 1px 1px black;
-} */
+/* 404 Page not found*/
