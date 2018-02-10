@@ -2,6 +2,19 @@
 
 db = require('./firebase/firebaseTest');
 
+it('Able to retrieve all comments in an object format.', () => {
+  db.ref("/Comments").once("value", allComments => {
+    expect(typeof allComments.val()).toBe('object');
+  })
+})
+
+it('Expect comments to have the keys, createdDate,fullname, id, message.', () => {
+  db.ref("/Comments").once("value", allComments => {
+    expect(Object.keys((Object.values(allComments.val()))[0])).toEqual(['createdDate', 'fullname', 'id', 'message'])
+  })
+})
+
+
 it('Able to post a comment.', () => {
   return db.ref("/Comments").once('value', commentsCount => {
   }).then(totalCommentsCount => {
