@@ -22,10 +22,11 @@ class Topics extends React.Component {
               )
             })}</div>
           :
-          <img src = 'https://media.giphy.com/media/52qtwCtj9OLTi/giphy.gif' alt = 'Loading' className='loading'/>}
+          <img src='https://media.giphy.com/media/52qtwCtj9OLTi/giphy.gif' alt='Loading' className='loading' />}
       </div>
     )
   }
+  
   getTopics = () => {
     db.ref('/Topics').on('value', res => {
       this.setState({
@@ -34,10 +35,5 @@ class Topics extends React.Component {
     })
   }
 }
-//   makeTopics = () => {
-//     let topics = ['Football', 'Cooking', 'Coding']
-//     topics.map(topic => db.ref("/Topics").push(topic))
-//   }
-// }
 
 export default Topics;

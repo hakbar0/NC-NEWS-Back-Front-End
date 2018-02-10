@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import db from '../firebase';
 import { Link } from 'react-router-dom';
+
 class Topic extends React.Component {
   componentDidMount() {
     this.getArticlesByTopics();
