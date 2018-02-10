@@ -36,14 +36,14 @@ class Article extends React.Component {
 
               <div class="card comments-form">
 
-                <form onSubmit = {this.postComment}>
+                <form onSubmit={this.postComment}>
                   <div className='form-group'>
                     <h2 className='comment-title'>Post a comment</h2>
                     <label for="form-name"><h5 className='form-name'>Author</h5></label>
-                    <input type="text" className="form-control" id="form-name" placeholder="Example: Lee Morris......" required/>
+                    <input type="text" className="form-control" id="form-name" placeholder="Example: Lee Morris......" required />
                     <label for="form-message"><h5 className='form-message'>Message</h5></label>
-                    <input type="text" className="form-control form-message" id="form-message" placeholder="Example: Why did Lee's fish die? The water LEEked...." required/>
-                    <input class="btn btn-primary submit" type="submit" value="Submit"  />
+                    <input type="text" className="form-control form-message" id="form-message" placeholder="Example: Why did Lee's fish die? The water LEEked...." required />
+                    <input class="btn btn-primary submit" type="submit" value="Submit" />
                   </div>
                 </form>
               </div>
