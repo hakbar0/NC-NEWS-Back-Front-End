@@ -25,6 +25,8 @@ a{
 }
 
 .whole-card{
+  margin: 0 auto; 
+  float: none;
   padding-top: 2%;
   padding-bottom: 2%;
 }
@@ -49,6 +51,11 @@ a{
 
 
 /* Single Article Page */
+.article-body{
+  font-size: 90%;
+  padding-left:1em;
+  padding-right:1em;
+}
 
 .article-text{
   padding-top: 0.5em;
@@ -115,6 +122,21 @@ a{
   margin: 10px 0;
 }
 
+.comments-card{
+  text-align: center;
+}
+
+.comment-message{
+  font-size: 70%;
+  padding-left:1em;
+  padding-right:1em;
+}
+
+.comment-date{
+  font-size: 70%;
+  padding-left:1em;
+  padding-right:1em;
+}
 
 /* Single Article Page */
 

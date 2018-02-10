@@ -30,8 +30,8 @@ class Article extends React.Component {
                 <h3 className='article-author'>Author: {this.state.article.author}</h3>
                 <h3 className='article-category'>Category: {this.state.article.category}</h3>
                 <h3 className='article-votes'>Votes: {this.state.article.votes}</h3>
-                <button type="button" class="btn btn-success upvote" onClick={this.upVote}>Upvote</button>
-                <button type="button" class="btn btn-danger downvote" onClick={this.downVote}>Downvote</button>
+                <button type="button" class="btn btn-success upvote btn-up" onClick={this.upVote}>Upvote</button>
+                <button type="button" class="btn btn-danger downvote btn-down" onClick={this.downVote}>Downvote</button>
               </div>
 
               <div class="card comments-form">
@@ -49,13 +49,10 @@ class Article extends React.Component {
               </div>
               {this.state.comments && Object.entries(this.state.comments).reverse().map((comment) => (
                 <div class="card comments-card">
-                  <div className='whole-card'>
-                    <div className='card-body comments-body' delete={comment[1].message}><h3 className='article-title'>Author: {comment[1].fullname}</h3>
-                      <h4>Comment: {comment[1].message}</h4>
-                      <h4>Created Date: {comment[1].createdDate}</h4>
-                      <button type="button" class="btn btn-danger downvote" onClick={this.deleteComment.bind(null, comment[0])}>Delete</button>
-                    </div>
-                  </div>
+                  <h3 className='article-title'>Author: {comment[1].fullname}</h3>
+                  <h4 className = 'comment-message'>Comment: {comment[1].message}</h4>
+                  <h4 className = 'comment-date'>Created Date: {comment[1].createdDate}</h4>
+                  <button type="button" class="btn btn-danger downvote" onClick={this.deleteComment.bind(null, comment[0])}>Delete</button>
                 </div>
               ))}
 
