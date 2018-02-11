@@ -32,7 +32,7 @@ it('Expect articles to have the values, author, body, category, imageUrl, and ti
   })
 })
 
-it('updates vote count in comment for an upvote.', () => {
+it('Updates vote count in comment for an upvote.', () => {
   return db.ref(`/Stories/-L4erJ5eJo56Bvs5BsjK`).once("value", res => {
   }).then(number => {
     previousVote = number.val().votes;
@@ -44,7 +44,7 @@ it('updates vote count in comment for an upvote.', () => {
   })
 })
 
-it('updates vote count in comment for a downvote.', () => {
+it('Updates vote count in comment for a downvote.', () => {
   return db.ref(`/Stories/-L4erJ5eJo56Bvs5BsjK`).once("value", res => {
   }).then(number => {
     previousVote = number.val().votes;

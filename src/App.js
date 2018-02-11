@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ServerStatus from 'react-server-status';
 import Navbar from './components/navbar'
 import Articles from './components/articles'
 import Article from './components/article'
@@ -12,6 +13,10 @@ import './App.css';
 
 
 class App extends Component {
+componentDidMount(){
+  console.log(this.props)
+}
+
   render() {
     return (
       <BrowserRouter>

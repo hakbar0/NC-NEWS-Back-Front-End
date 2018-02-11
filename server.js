@@ -1,6 +1,6 @@
-const {createServer} = require('http');
+const { createServer } = require('http');
 const express = require('express');
-const  compression = require('compression');
+const compression = require('compression');
 const morgan = require('morgan');
 const path = require = ('path');
 
@@ -10,27 +10,28 @@ const PORT = normalizePort(process.env.PORT || 3000)
 const app = express();
 const dev = app.get('env') !== 'production';
 
-if(!dev){
+if (!dev) {
   app.disable('x-powered-by');
   app.use(compression());
   app.use(morgan('common'));
 
-  app.use(express.static(__dirname+ '/' + 'build'))
+  app.use(express.static(__dirname + '/' + 'build'))
 
-  app.get('*', (req, res)=>{
-    res.sendFile(__dirname+ '/' + 'build' + 'index.html')
+  app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/' + 'build' + 'index.html')
   })
 }
 
-if(dev){
+if (dev) {
   app.use(morgan('dev'))
+  
 }
 
 
 const server = createServer(app);
 
 server.listen(PORT, err => {
-  if(err) throw err;
+  if (err) throw err;
   console.log('Server started!')
 })
 
