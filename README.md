@@ -38,6 +38,16 @@ npm install
 
 Note: This could take some time, depending on your internet connection.
 
+### Run locally
+
+Note to run locally, navigate to the directory this repo is located at. Then run start. 
+
+```
+npm start
+```
+
+Note: This could take some time, depending on your internet connection.
+
 ## Running the tests
 
 To run tests navigate to the root folder and run npm t.
@@ -139,9 +149,13 @@ Form issues: Note forms feedback is minimal and is done within the html form its
 
 Form issues(Future work): Have a helpful form. Describing exactly what is wrong by giving the user live feedback.
 
+Finally, due to Firebase being a non-relational database seeding for tests was harder than expected. This meant, I had to hardcode an array of excising unique ID's and randomly pick one and generate comments randomly. Hence, I didn't reseed for tests.  
+
 ### Outcome
 
-The application was useful and nicely presented. This worked well on both desktop and mobile. The major learning outcome for me was integrating the backend and frontend. As normally we would have designed both parts separately or be it by working on separate teams. But by working on both it allowed me to see the bigger picture.
+The application was useful and nicely presented. This worked well on both desktop and mobile. The major learning outcome for me was integrating the backend and frontend. As normally we would have designed both parts separately or be it by working on separate teams. But by working on both it allowed me to see the bigger picture. 
+
+Note: If I were to do an application like this again, I would pick a relational database like MongoDB. As it would allows tests to be easier, i.e seeding database.
 
 ## Authors
 
