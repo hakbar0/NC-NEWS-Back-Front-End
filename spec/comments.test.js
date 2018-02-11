@@ -10,7 +10,22 @@ it('Able to retrieve all comments in an object format.', () => {
 
 it('Expect comments to have the keys, createdDate,fullname, id, message.', () => {
   db.ref("/Comments").once("value", allComments => {
-    expect(Object.keys((Object.values(allComments.val()))[0])).toEqual(['createdDate', 'fullname', 'id', 'message'])
+    let commentKeys = Object.keys((Object.values(allComments.val()))[0]);
+    expect(commentKeys).toEqual(['createdDate', 'fullname', 'id', 'message'])
+  })
+})
+
+it('Expect comments to have 4 keys.', () => {
+  db.ref("/Comments").once("value", allComments => {
+    let commentKeys = Object.keys((Object.values(allComments.val()))[0]);
+    expect(commentKeys.length).toBe(4)
+  })
+})
+
+it('Expect the values of createdDate, fullname, id and message to be a string.', () => {
+  db.ref("/Comments").once("value", allComments => {
+    let commentValues = Object.values((Object.values(allComments.val()))[0])
+    commentValues.map((commentValue) => { expect(typeof commentValue).toBe('string') })
   })
 })
 
@@ -48,10 +63,4 @@ it('Able to delete a comment.', () => {
     })
   })
 })
-
-
-
-
-
-
 
