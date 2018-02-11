@@ -109,11 +109,11 @@ A desktop example.
 
 A mobile example.
 
-[alt text](/Images/mobileArticle.png)
+![alt text](/Images/mobileArticle.png)
 
 The article page first checks if the states have any values. As the default value of the state is '' which is a falsely value. This mean the loading gif will keep displaying until, the state has a truthy value. We then make a request to Firebase to retrieve all the data for all articles. 
 
-[alt text](/Images/articleBlock.png)  
+![alt text](/Images/articleBlock.png)  
 
 You can see all stories are kept under a sort of key known as Stories which I defined. As shown in the image we get the articles back in a massive nested objected. So, to extract all articles, I need to convert this object to an array, and then map over this new array. I also use the array method, reverse to reverse the array to make sure the newest articles come first. As Firebase by default returns oldest first. 
 
