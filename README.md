@@ -43,7 +43,7 @@ To run tests navigate to the root folder and run npm t.
 ```
 npm t
 ```
-Note: These tests are located in the src folder and have a naming convetion "example.test.js".
+Note: These tests are located in the src folder and have a naming convention "example.test.js".
 
 ### Article tests
 
