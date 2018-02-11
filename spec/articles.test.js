@@ -15,7 +15,7 @@ it('Expect articles to have the keys, author, body, category, imageUrl, title an
   })
 })
 
-it('Expect articles to have the keys, author, body, category, imageUrl, title and votes.', () => {
+it('Expect articles to have the keys of a length of 6.', () => {
   db.ref("/Stories").once("value", allArticles => {
     let articleKeys = Object.keys((Object.values(allArticles.val()))[0]);
     expect(articleKeys.length).toBe(6)
