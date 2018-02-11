@@ -52,7 +52,7 @@ class Article extends React.Component {
                   <h3 className='article-title'>Author: {comment[1].fullname}</h3>
                   <h4 className='comment-message'>Comment: {comment[1].message}</h4>
                   <h4 className='comment-date'>Created Date: {comment[1].createdDate}</h4>
-                  {comment[1].fullname == 'northcoder' && <button type="button" class="btn btn-danger downvote" onClick={this.deleteComment.bind(null, comment[0])}>Delete</button>}
+                  {comment[1].fullname === 'northcoder' && <button type="button" class="btn btn-danger downvote" onClick={this.deleteComment.bind(null, comment[0])}>Delete</button>}
                 </div>
               ))}
 
