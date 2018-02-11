@@ -105,7 +105,7 @@ The purpose of this project was to design, build and test a news application. Th
 *   A get request on ‘/create-story’ displays a form where you can create a story. 
 *   A get request on ‘/users’ displays all users who have made an article.
 *   A get request on ‘/users/:name’ displays all articles for that single users.
-*   If any route is given a 404 error will be shown.
+*   If any other route is requested a 404 error will be shown.
 
 *   Can only deleted comments posted under the author northcoder.
 
@@ -121,11 +121,11 @@ A mobile example.
 
 ![alt text](/Images/mobileArticle.png)
 
-The article page first checks if the states have any values. As the default value of the state is '' which is a falsely value. This mean the loading gif will keep displaying until, the state has a truthy value. We then make a request to Firebase to retrieve all the data for all articles. 
+The article page first checks if the states have any values. As the default value of the state is '' which is a falsely value. This means the loading gif will keep displaying until, the state has a truthy value. We then make a request to Firebase to retrieve all the data for all articles. 
 
 ![alt text](/Images/articleBlock.png)  
 
-You can see all stories are kept under a sort of key known as Stories which I defined. As shown in the image we get the articles back in a massive nested objected. So, to extract all articles, I need to convert this object to an array, and then map over this new array. I also use the array method, reverse to reverse the array to make sure the newest articles come first. As Firebase by default returns oldest first. 
+You can see all stories are kept under a sort of key known as Stories which I defined. As shown in the image we get the articles back in a massive nested objected. So, to extract all articles, I need to convert the object to an array, and then map over this new array. I also use the array method, reverse to reverse the array to make sure the newest articles come first. As Firebase by default returns oldest first. 
 
 Note: This should hopefully make it to easier understand how all the other pages work.
 
@@ -145,17 +145,17 @@ Voting issues: Able to vote infinitely.
 
 Voting(Future work): Able to have authentication, possibly with GitHub, so a user can only vote once. 
 
-Form issues: Note forms feedback is minimal and is done within the html form itself. So, it will force you to at least atempt to fill the form in.
+Form issues: Forms feedback is minimal and is done within the html form itself. So, it will force you to at least atempt to fill the form in.
 
 Form issues(Future work): Have a helpful form. Describing exactly what is wrong by giving the user live feedback.
 
-Finally, due to Firebase being a non-relational database seeding for tests was harder than expected. This meant, I had to hardcode an array of excising unique ID's and randomly pick one and generate comments randomly. Hence, I didn't reseed for tests.  
+Finally, due to Firebase being a non-relational database, seeding for tests was harder than expected. This meant, I had to hardcode an array of excising unique ID's and randomly pick one and generate comments randomly. Hence, I didn't reseed for tests.  
 
 ### Outcome
 
-The application was useful and nicely presented. This worked well on both desktop and mobile. The major learning outcome for me was integrating the backend and frontend. As normally we would have designed both parts separately or be it by working on separate teams. But by working on both it allowed me to see the bigger picture. 
+The application was useful and nicely presented. This worked well on both desktop and mobile. The major learning outcome for me was integrating the backend and frontend. As normally we would have designed both parts separately or be it by working on separate teams. But by working on both, it allowed me to see the bigger picture. 
 
-Note: If I were to do an application like this again, I would pick a relational database like MongoDB. As it would allows tests to be easier, i.e seeding database.
+Note: If I were to do an application like this again, I would pick a relational database like MongoDB. As it would allow tests to be easier, i.e seeding database.
 
 ## Authors
 
