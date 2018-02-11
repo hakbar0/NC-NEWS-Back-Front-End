@@ -101,9 +101,9 @@ The purpose of this project was to design, build and test a news application. Th
 
 Below are example of how the homepage looks.
 
-A desktop example: ![alt text](/images/hdArticle.png)
+A desktop example: ![alt text](/Images/hdArticle.png)
 
-A mobile example: ![alt text](/images/mobileArticle.png)
+A mobile example: ![alt text](/Images/mobileArticle.png)
 
 ## Authors
 
