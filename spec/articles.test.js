@@ -1,4 +1,4 @@
-// tests for all story features.
+// tests for all article features.
 
 db = require('./firebase/firebaseTest');
 
@@ -31,7 +31,6 @@ it('Expect articles to have the values, author, body, category, imageUrl, and ti
     })
   })
 })
-
 
 it('updates vote count in comment for an upvote.', () => {
   return db.ref(`/Stories/-L4erJ5eJo56Bvs5BsjK`).once("value", res => {
