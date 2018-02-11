@@ -2,7 +2,9 @@
 
 This is a final project of the Northcoders curriculum, to showcase our abilities. These skills will show my ability to have sufficient skills in both the front end and backend.
 
-[Deployed](https://nc-news-test-2.herokuapp.com/)
+[Live App](https://nc-news-test-2.herokuapp.com/)
+
+Please read description to see how it works.
 
 ## Getting Started
 
@@ -66,11 +68,6 @@ Expect articles to have the values, author, body, category, imageUrl, and title 
 ```
 
 ```
-Expect articles to have the values, author, body, category, imageUrl, and title to be a string, but votes to be a number.
-```
-
-
-```
 Updates vote count in comment for an upvote.
 ```
 
@@ -86,6 +83,27 @@ Note: To view all tests, please navigate to the spec folder and see the tests.
 * [BackEnd](https://expressjs.com) - Express
 * [Database](https://firebase.google.com) - Firebase
 * [Deployment](https://dashboard.heroku.com/login) - Heroku
+
+## Description
+
+The purpose of this project was to design, build and test a news application. The features are listed below.
+
+* 	A get request on ‘/’ displays all articles.
+* 	A get request on ‘/article/:id’ display that single article.
+* 	A get request on ‘/topics’ displays all the topics.
+* 	A get request on ‘/topics/:topic’ display all articles for that topic.
+* 	A get request on ‘/create-story’ displays a form where you can create a story. 
+* 	A get request on ‘/users’ displays all users who have made an article.
+* 	A get request on ‘/users/:name’ displays all articles for that single users.
+* 	If any route is given a 404 error will be shown.
+
+### Home page
+
+Below are example of how the homepage looks.
+
+A desktop example: ![alt text](/images/hdArticle.png)
+
+A mobile example: ![alt text](/images/mobileArticle.png)
 
 ## Authors
 
