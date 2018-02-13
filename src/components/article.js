@@ -1,16 +1,14 @@
 import React from 'react';
 import '../App.css';
 import db from '../firebase';
+import moment from 'moment';
 
 class Article extends React.Component {
   componentDidMount() {
     this.getArticle();
     this.getComments();
   }
-  state = {
-    article: '',
-    comments: ''
-  }
+  state = { article: '', comments: '' }
 
   render() {
     return (
@@ -47,11 +45,12 @@ class Article extends React.Component {
                   </div>
                 </form>
               </div>
+
               {this.state.comments && Object.entries(this.state.comments).reverse().map((comment) => (
                 <div class="card comments-card">
                   <h3 className='article-title'>Author: {comment[1].fullname}</h3>
                   <h4 className='comment-message'>Comment: {comment[1].message}</h4>
-                  <h4 className='comment-date'>Created Date: {comment[1].createdDate}</h4>
+                  <h4 className='comment-date'>Created Date: {moment((comment[1].createdDate)).format('LLLL')}</h4>
                   {comment[1].fullname === 'northcoder' && <button type="button" class="btn btn-danger downvote" onClick={this.deleteComment.bind(null, comment[0])}>Delete</button>}
                 </div>
               ))}
@@ -64,47 +63,18 @@ class Article extends React.Component {
     )
   }
 
+  getArticle = () => { db.ref(`/Stories/${this.props.match.params.id}`).on("value", res => { this.setState({ article: res.val() }) }); }
 
+  upVote = () => { db.ref(`/Stories/${this.props.match.params.id}`).update({ votes: this.state.article.votes + 1 }); }
 
-  getArticle = () => {
-    db.ref(`/Stories/${this.props.match.params.id}`).on("value", res => {
-      this.setState({
-        article: res.val()
-      })
-    });
-  }
+  downVote = () => { db.ref(`/Stories/${this.props.match.params.id}`).update({ votes: this.state.article.votes - 1 }); }
 
-  upVote = () => {
-    let currentvote = this.state.article.votes;
-    db.ref(`/Stories/${this.props.match.params.id}`).update({ votes: currentvote + 1 });
-  }
+  getComments = () => { db.ref("/Comments").orderByChild('id').equalTo(`${this.props.match.params.id}`).on('value', res => { this.setState({ comments: res.val() }) }); }
 
-  downVote = () => {
-    let currentvote = this.state.article.votes;
-    db.ref(`/Stories/${this.props.match.params.id}`).update({ votes: currentvote - 1 });
-  }
+  deleteComment = (id) => { db.ref(`/Comments/${id}`).once('value', res => { db.ref(`/Comments/${id}`).remove(); }) }
 
-  getComments = () => {
-    db.ref("/Comments").orderByChild('id').equalTo(`${this.props.match.params.id}`).on('value', res => {
-      this.setState({
-        comments: res.val()
-      })
-    });
-  }
+  postComment = () => { db.ref("/Comments").push({ createdDate: new Date(Date.now()).toISOString(), fullname: document.getElementById('form-name').value, id: this.props.match.params.id, message: document.getElementById('form-message').value }); }
 
-  postComment = () => {
-    db.ref("/Comments").push({
-      createdDate: new Date(Date.now()).toISOString(),
-      fullname: document.getElementById('form-name').value,
-      id: this.props.match.params.id,
-      message: document.getElementById('form-message').value
-    });
-  }
-
-  deleteComment = (id) => {
-    db.ref(`/Comments/${id}`).once('value', res => { db.ref(`/Comments/${id}`).remove(); })
-  }
-  
 }
 
 export default Article;
