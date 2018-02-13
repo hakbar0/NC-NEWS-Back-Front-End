@@ -13,20 +13,20 @@ class Topic extends React.Component {
   render() {
     return (
       <div>
-        {this.state.articlesByTopic?
+        {this.state.articlesByTopic ?
           <div className='container article-board'>
             {Object.entries(this.state.articlesByTopic).reverse().map(function (article) {
               return (
                 <div className='whole-card'>
                   <div className='card' style={{ width: '20rem' }}>
-                    <img src={`${article[1].imageUrl}`} className = 'article-image' alt="Article" />
+                    <img src={`${article[1].imageUrl}`} className='article-image' alt="Article" />
                     <Link to={`/article/${article[0]}`}><div className='card-body body-of-the-card'><h3 className='article-title'>{article[1].title}</h3></div></Link>
                   </div>
                 </div>
               )
             })}</div>
           :
-          <img src = 'https://media.giphy.com/media/52qtwCtj9OLTi/giphy.gif' alt = 'Loading' className='loading'/>
+          <img src='https://media.giphy.com/media/52qtwCtj9OLTi/giphy.gif' alt='Loading' className='loading' />
         }
       </div>
     )
