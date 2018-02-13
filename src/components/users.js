@@ -15,11 +15,12 @@ class Users extends React.Component {
     return (
       <div>
         {this.state.users ?
-          <div className='container article-board'>
+          <div className='container article-board user-board'>
+            <header><p>Note: By clicking on the user, you will be navigated to all the articles that user has posted.</p></header>
             {Object.entries(this.state.users).reverse().map(function (user) {
               return (
-                <div className='whole-card'>
-                  <Link to={`/users/${user[1].fullname}`}><div className='card-body body-of-the-card'><h3 className = 'user-card'>{user[1].fullname}</h3></div></Link>
+                <div className=''>
+                  <Link to={`/users/${user[1].fullname}`}><div className='body-of-the-user-card'><h3>{user[1].fullname}</h3></div></Link>
                 </div>
               )
             })}</div>

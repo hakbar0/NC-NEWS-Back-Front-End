@@ -142,9 +142,15 @@ a{
 
 /* User page */
 
-.user-card{
- text-align: left;
+.user-board{
+  text-align: center;
+ display: block; 
 }
+
+.body-of-the-user-card{
+  height: 50px;
+}
+
 
 /* User page */
 
