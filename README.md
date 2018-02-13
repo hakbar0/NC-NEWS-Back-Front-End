@@ -1,6 +1,6 @@
 # NC-NEWS-Back-Front-End
 
-This is my final project for the Northcoders curriculum, demonstrating my abilities in front and back end technologies. I originally completed this project using MongoDB, Mongoose, Express and React, and have chosen to re-do the project from stratch using the Firebase Cloud Platform which offers a realtime database, authentication and cloud computing solutions.
+This is my final project for the Northcoders curriculum, demonstrating my abilities in front and back end technologies. I originally completed this project using MongoDB, Mongoose, Express and React, and have chosen to re-do the project from scratch using the Firebase Cloud Platform which offers a real-time database, authentication and cloud computing solutions.
 
 [Live App](https://nc-news-test-2.herokuapp.com/)
 
@@ -83,7 +83,7 @@ A mobile example.
 
 * Seeding - Seeding Firebase was a learning curve for me and I would like to improve my seeding process to make development workflow easier.
 
-* Tech choices - in the future I would probably use MongoDB for my database rather than Firebase's realtime database, as I found it easier to work with more structured data that Firebase's Realtime Database provides. I would also be interested to explore Firebase's new Cloud Firestore database which stores documents in more organised collections.
+* Tech choices - in the future I would probably use MongoDB for my database rather than Firebase's realtime database, as I found it easier to work with more structured data that Firebase's realtime Database provides. I would also be interested to explore Firebase's new Cloud Firestore database which stores documents in more organised collections.
 
 * Testing React - am keen to learn more about React testing with Jest, the framework I used to test my database queries.
 
